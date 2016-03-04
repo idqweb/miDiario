@@ -45,7 +45,7 @@
 			
 		</header>
 		<div id="menuWeb">
-			<? include_once ("./menuDeLaWebEnAdmin.inc.php")?>			
+			<?php include_once ("./menuDeLaWebEnAdmin.inc.php"); ?>			
 		</div>
 	
 		Insertar una entrada<br/>

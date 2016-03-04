@@ -35,15 +35,40 @@ Funciones JQuery y Javascript para entradas posts
 });
 
 /** FIN EFECTOS NAVEGACION **/
+
+
+/*** EL ANCHA **/
+
 $(document).ready(function(){
 
-$('#miAncla').click(function(e){
-	e.preventDefault();
-	$('html, body').stop().animate({scrollTop: $($(this).attr('href')).offset().top}, 1000);
-	
-})
+			$('#miAncla').click(function(e){
+				e.preventDefault();
+				$('html, body').stop().animate({scrollTop: $($(this).attr('href')).offset().top}, 1000);
 
+			})
+			/* si hay scroll que aparezca ancla */
+			$(window).scroll(function() {
+				$('#miAncla').show();
+				var separacionFondoPantalla = $(window).height() - 90;
+				var separacionEnAncho =  $(window).width() - 90;
+				
+				$('#miAncla').css('top', $(this).scrollTop() + separacionFondoPantalla + "px");
+				$('#miAncla').css("left", separacionEnAncho);
+				/* si estas en el tope de la web desaparece el ancla */
+				if ($(window).scrollTop() <= 10)
+                    $('#miAncla').hide();
+			});
+	
+			
+	
+	
+	
 });
+/** FIN ANCLA **/
+
+
+
+
 
 
 

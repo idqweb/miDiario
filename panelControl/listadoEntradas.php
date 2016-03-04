@@ -44,7 +44,7 @@
 						
 		</header>
 			<div id="menuWeb">
-				<?=include_once ("./menuDeLaWebEnAdmin.inc.php")?>			
+				<?php include_once ("./menuDeLaWebEnAdmin.inc.php");?>			
 			</div>
 	
 		Listado de las entradas<br/>

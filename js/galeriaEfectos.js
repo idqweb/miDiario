@@ -12,20 +12,24 @@ $(document).ready(function() {
 			 	ancho=ancho*1.3; 
 				$(this).css({ 'width':ancho+"px", 'height':alto+"px" });
 			});
+	
 		$(".escala").mouseout(function(event){
 					event.preventDefault;
 			 		$(".escala").css('width', 'auto');		
 					$(".escala").css('height', 'auto');		
 			});
+	
 		$(".escala").click(function(event){
 			event.preventDefault;
-			 var foto = $(this).attr("alt");
-			
+			var foto = $(this).attr("alt");
+			var anchoPantalla =  $(window).width();
+			var altoPantalla = $(window).height();
+			$('.fondo-negro').css({width : anchoPantalla+"px",height : altoPantalla+"px"});
 			$("#light").show( "slow" );
 			$("#fade").show( "slow" );
-			$("#fade").css('width', 'auto');
 			$("#light").append("<img class='fotoGrandes' src=./uploads/fotos/"+foto+" alt="+foto+"  />");
 		});
+	
 		$("#b-cerrar").click(function(event){
 			event.preventDefault;
 			$("#light").hide( 1000 );

@@ -42,9 +42,9 @@
 			
 		</header>
 		<div id="menuWeb">
-			<? include_once ("./menuDeLaWebEnAdmin.inc.php")?>			
+			<?php include_once ("./menuDeLaWebEnAdmin.inc.php"); ?>			
 		</div>
-		Estoy en el panel de control<br/>
+		
 			
 		<h3>Acciones posibles:</h3>
 		

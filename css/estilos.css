@@ -60,12 +60,9 @@ h5{
 
 
 #miAncla{
+  
   position: absolute;
-  bottom:30px;
-  
-  
-  
-  
+
   
 }
 
@@ -147,8 +144,6 @@ h5{
 	position: absolute;
 	top: 0%;
 	left: 0%;
-	width:150%;
-	height: 150%;
 	background-color: black;
 	z-index:1001;
 	-moz-opacity: 0.8;
