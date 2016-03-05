@@ -20,20 +20,28 @@ $(document).ready(function() {
 			});
 	
 		$(".escala").click(function(event){
-			event.preventDefault;
+			
+			//event.preventDefault;
 			var foto = $(this).attr("alt");
 			var anchoPantalla =  $(window).width();
 			var altoPantalla = $(window).height();
 			$('.fondo-negro').css({width : anchoPantalla+"px",height : altoPantalla+"px"});
-			$("#light").show( "slow" );
-			$("#fade").show( "slow" );
-			$("#light").append("<img class='fotoGrandes' src=./uploads/fotos/"+foto+" alt="+foto+"  />");
+			var id1 = event.target.id;
+			
+		 
+       			$("#light"+id1).show( "slow" );
+			  	$("#light"+id1).append("<img class='fotoGrandes' src=./uploads/fotos/"+foto+" alt="+foto+"  />");
+       			$("#fade"+id1).show( "slow" );
+       	 
 		});
 	
-		$("#b-cerrar").click(function(event){
-			event.preventDefault;
-			$("#light").hide( 1000 );
-			$("#fade").hide( 1000 );
+		$(".btn").click(function(event){
+			//event.preventDefault;
+			var id2 = event.target.id;
+			var resultadoID = id2.split("-");
+			var idActivo = resultadoID[1];
+			$("#light"+idActivo).hide( 1000 );
+			$("#fade"+idActivo).hide( 1000 );
 			$('.fotoGrandes').remove(); 
 						
 			
@@ -42,8 +50,6 @@ $(document).ready(function() {
 	
 	
 });
-
-
 
 
 

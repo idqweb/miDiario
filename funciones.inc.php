@@ -1,6 +1,55 @@
 <?php
 
 
+
+
+
+
+
+function consultaConfiguracion(){
+	
+
+	if($c==null){
+		return false;
+	}else{
+		
+		if($resultado){
+			
+			return true;
+			
+		}else{
+			
+			return false;	
+		}
+				
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // para cambiar permisos en directorio y archivos
 function chmod_R($path, $filemode, $dirmode) { 
     if (is_dir($path) ) { 
