@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="../css/estilos.css"/>
 	<!-- JS NECESARIOS -->	
 		<script src="../js/jquery-2.1.4.min.js"></script>
+		<script src="../js/configPost1.js"></script>
 	<!-- NECESARIO PARA EL EDITOR -->
 		<script src="./ckeditor/ckeditor.js"></script>
 		
@@ -19,9 +20,9 @@
 		
 		<!-- Archivos externos -->
 		<?php
-			include_once("../mysql.inc.php"); // datos conexion DB
-			include_once("../resize.inc.php");
-			include_once("../funciones.inc.php");
+			include_once ("../funciones.inc.php"); // funciones y conexion con la DB
+			include_once("../resize.inc.php"); // clase para redimensionar imagenes
+			
 		?>
 	<div id="contenedor">
 		<header>
@@ -48,7 +49,7 @@
 			<?php include_once ("./menuDeLaWebEnAdmin.inc.php");?>
 		</div>
 	
-		
+		<h1>Publica un Nuevo Post Multimedia</h1>
 		
 		<div id="formularioPost">
 			
@@ -57,7 +58,7 @@
 			
 			<fieldset>
 				<legend>Insertar Entrada Multimedia</legend>
-			<label>Titular:</label><input type="text" id="titulo" name="titulo" /><br/>
+			<label>Titular:</label><input type="text" id="titulo" name="titulo" required autofocus /><br/>
 			<label>Tema:</label>
 						<select name="tema" id="tema">
 						  <option value="Reflexiones">Reflexiones</option>
@@ -67,6 +68,7 @@
 						</select>
 			<input type="hidden" id="fecha" name="fecha" value="<?=date('Y-m-d H:i:s')?>" />
 			<label>Autor:</label><input type="text" id="autor" name="autor" /><br/>
+			<span class="avisoFormulario">* Opcional: Si no pones nada será "admin".</span>
 			<label>Archivo:</label><input id="inputImage" name="archivo" type="file" accept="image/*"/><br/>
 			<button type="reset" class="">Borrar Datos</button>
 			<button type="submit" name="b-submit" class="">Añadir Entrada</button>

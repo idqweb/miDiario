@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="./css/loginMenu.css"/>
 	<!-- JS NECESARIOS -->	
 	<script src="./js/jquery-2.1.4.min.js"></script>
-	<script src="./js/configPost.js"></script>
+		<script src="./js/configPost.js"></script>
 	
 		
 		
@@ -25,8 +25,7 @@
 		
 		<!-- Archivos externos -->
 		<?php
-			include_once ("mysql.inc.php"); // datos conexion DB
-			include_once ("funciones.inc.php"); 
+			include_once ("funciones.inc.php"); // funciones y conexion con la DB
 		?>
 	<div id="contenedor">
 		<header id="ancla">

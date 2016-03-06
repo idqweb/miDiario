@@ -11,13 +11,14 @@
 		<link rel="stylesheet" href="../css/estilos.css"/>
 	<!-- JS NECESARIOS -->	
 	<script src="../js/jquery-2.1.4.min.js"></script>
+	<script src="../js/configPost1.js"></script>
 		
 	</head>
 	<body>
 		
 		<!-- Archivos externos -->
 		<?php
-			include ("../mysql.inc.php"); // datos conexion DB
+			include_once ("../funciones.inc.php"); // funciones y conexion con la DB
 			
 		?>
 	<div id="contenedor">
@@ -46,28 +47,36 @@
 		</div>
 		
 			
-		<h3>Acciones posibles:</h3>
+		<h1>Acciones posibles:</h1>
 		
 		<div id="accionesPanel">
 			<span class="opcionesPanel">
-				<a href="./nuevaEntrada.php">
-				<img src=".././images/img-newPost-180.png" alt="Nuevo Post" />
-					<div class="textoPanel">Entrada Texto</div></a>
+				<span id="panelEdit">
+					<a href="./nuevaEntrada.php">
+					<img src=".././images/img-newPost-180.png" alt="Nuevo Post" />
+						<h4>Entrada Texto</h4></a>
+				</span>	
 			</span>
 			<span class="opcionesPanel">
-				<a href="./nuevaEntradaMultimedia.php">
-				<img src=".././images/img-newMultimedia-180.png" alt="Nuevo Post Multimedia" />
-				<div class="textoPanel">Entrada Multimedia</div></a>
+				<span id="panelFoto">
+					<a href="./nuevaEntradaMultimedia.php">
+					<img src=".././images/img-newMultimedia-180.png" alt="Nuevo Post Multimedia" />
+						<h4>Entrada Multimedia</h4></a>
+				</span>	
 			</span>
 			<span class="opcionesPanel">
-				<a href="./listadoEntradas.php">
-				<img src=".././images/img-listado-180.png" alt="Ver Listado" />
-				<div class="textoPanel">Listado Entradas</div></a>
+				<span id="panelList">
+					<a href="./listadoEntradas.php">
+					<img src=".././images/img-listado-180.png" alt="Ver Listado" />
+					<h4>Listado Entradas</h4></a>
+				</span>
 			</span>	
 			<span class="opcionesPanel">
-				<a href="./configWeb.php">
-				<img src=".././images/img-config-180.png" alt="Configura Web" />
-				<div class="textoPanel">Configura la Web</div></a>
+				<span id="panelConf">
+					<a href="./configWeb.php">
+					<img src=".././images/img-config-180.png" alt="Configura Web" />
+					<h4>Configura la Web</h4></a>
+				</span>
 			</span>
 		</div>
 		

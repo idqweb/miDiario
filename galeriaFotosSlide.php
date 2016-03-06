@@ -3,7 +3,7 @@
 <html lang="es">
 	<head>
 		<meta charset="utf-8"/>
-		<title>Galeria de Fotos con Slide</title>
+		<title>Diapositivas de Fotos</title>
 		<meta name="description" content="Mi diario es una página web en la que plasmar todos mis pensamientos.">
 		<meta name="keywords" content="diario,blog personal,pensamientos">
 		<meta name="author" content="Isaac Díez">
@@ -21,8 +21,7 @@
 		
 		<!-- Archivos externos -->
 		<?php
-			include_once ("mysql.inc.php"); // datos conexion DB
-			include_once ("funciones.inc.php"); 
+			include_once ("funciones.inc.php"); // funciones y conexion con la DB
 		?>
 		<div id="contenedor">
 		<header>

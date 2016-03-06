@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="../css/estilos.css"/>
 	<!-- JS NECESARIOS -->	
 		<script src="../js/jquery-2.1.4.min.js"></script>
-		<script src="../js/configPost.js"></script>
+		<script src="../js/configPost1.js"></script>
 	<!-- NECESARIO PARA EL EDITOR -->
 		<script src="./ckeditor/ckeditor.js"></script>
 		
@@ -20,7 +20,7 @@
 		
 		<!-- Archivos externos -->
 		<?php
-			include ("../mysql.inc.php"); // datos conexion DB
+			include_once ("../funciones.inc.php"); // funciones y conexion con la DB
 			
 		?>
 	<div id="contenedor">
@@ -48,14 +48,13 @@
 			<?php include_once ("./menuDeLaWebEnAdmin.inc.php"); ?>			
 		</div>
 	
-		Insertar una entrada<br/>
+		<h1>Publica un Nuevo Post de texto</h1>
 		<div id="formularioPost">	
 		<form method="post" action="./nuevaEntrada.php">
 			<fieldset>
-			<legend>Insertar Entrada Multimedia</legend>
-			<label>Titular:</label><input type="text" id="titulo" name="titulo"  size="80" maxlength="80" /><br/>
-			<label>Copete:</label><textarea id="copete" name="copete" rows="5" cols="80" maxlength="300">
-			</textarea><br/>
+			<legend>Nuevo Post</legend>
+			<label>Titular:</label><input type="text" id="titulo" name="titulo"  size="80" maxlength="80" required autofocus />
+			<label>Copete:</label><textarea id="copete" name="copete" rows="5" cols="80" maxlength="300" required></textarea><br/>
 			<label>Tema:</label>
 						<select name="tema" id="tema">
 						  <option value="Reflexiones">Reflexiones</option>
@@ -68,14 +67,13 @@
 			<label>Autor:</label><input type="text" id="autor" name="autor" size="20" maxlength="20"/><br/>
 			<span class="avisoFormulario">* Opcional: Si no pones nada será "admin".</span>
 			<label>Cuerpo:</label> 
-			<textarea name="editor1" id="editor1" rows="10" cols="80">
-               Escribe aquí lo que desees
-            </textarea>
+			<textarea name="editor1" id="editor1" rows="10" cols="80"></textarea>
 					
 				<script>
 						// Replace the <textarea id="editor1"> with a CKEditor
 						// instance, using default configuration.
-               			 CKEDITOR.replace( 'editor1' );
+               			 	CKEDITOR.replace( 'editor1' );
+							CKEDITOR.instances.editor1.setData('Aqui tu texto...');
            		</script>
 			<button name="bnt-post" id="btn-post">Insertar Entrada</button>
 			

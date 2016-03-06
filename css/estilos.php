@@ -1,3 +1,18 @@
+<?php
+    header("Content-type: text/css; charset: UTF-8");
+
+      include ("./consulta.inc.php");
+
+    
+    var_dump ($config);
+?>
+
+
+
+
+
+
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,900italic,900,700,400italic,500italic);
 
 html {
@@ -175,7 +190,11 @@ h5{
   margin:0
 }
 
-
+.miniaturas-fotos{
+  display:inline 
+  
+  
+}
 .miGaleria {
    display: -webkit-flex;
    display: flex;
@@ -198,54 +217,9 @@ h5{
 
 
 
-/***** CSS3 inputs validacion ******/
-
-input:invalid {
- 
-border: 1px solid red;
- 
-}
- 
-/* Estilo por defecto */
- 
-input:valid {
- 
-border: 1px solid green;
- 
-}
-
-input:required:invalid {
- 
-border: 1px solid red;
- 
-}
- 
-input:required:valid {
- 
-border: 1px solid green;
- 
-}
 
 
-textarea:valid {
- 
-border: 1px solid green;
- 
-}
 
-textarea:required:invalid {
- 
-border: 1px solid red;
- 
-}
- 
-textarea:required:valid {
- 
-border: 1px solid green;
- 
-}
-
-/***** //////////////////////// ******/
 
 
 
@@ -420,7 +394,7 @@ border: 1px solid green;
 
  #slides {
       display: none
-     margin-top:100px;	
+     
     }
 
     #slides .slidesjs-navigation {
@@ -536,11 +510,11 @@ border: 1px solid green;
       display: none
     }
 
-.container {
+    .container {
       margin: 0 auto
     }
 
-    /* For tablets & smart phones */
+    /* For tablets  smart phones */
     @media (max-width: 767px) {
       body {
         padding-left: 20px;
@@ -561,33 +535,15 @@ border: 1px solid green;
     /* For smaller displays like laptops */
     @media (min-width: 768px) and (max-width: 979px) {
       .container {
-        width: 724px;
-		margin-top: 5px;	
+        width: 724px
       }
     }
 
     /* For larger displays */
     @media (min-width: 1200px) {
       .container {
-        width: 1170px;
-		margin-top: 10px;	
+        width: 1170px
       }
     }
-  </style>
+  
 /********************* FIN SLIDE RESPONSIVE ********************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

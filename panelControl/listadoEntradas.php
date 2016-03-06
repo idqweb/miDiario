@@ -1,4 +1,4 @@
-<?php	session_start(); ?>
+<?php	session_start(); ob_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="../css/estiloTablas.css"/>
 	<!-- JS NECESARIOS -->	
 		<script src="../js/jquery-2.1.4.min.js"></script>
+		<script src="../js/configPost1.js"></script>
 	<!-- NECESARIO PARA EL EDITOR -->
 		<script src="./ckeditor/ckeditor.js"></script>
 		
@@ -20,8 +21,8 @@
 		
 		<!-- Archivos externos -->
 		<?php
-			include ("../mysql.inc.php"); // datos conexion DB
-			include ("../funciones.inc.php"); // funciones de la web
+			
+			include_once ("../funciones.inc.php"); // funciones y conexion con la DB
 		?>
 		<div id="contenedor">
 		<header>
@@ -47,7 +48,7 @@
 				<?php include_once ("./menuDeLaWebEnAdmin.inc.php");?>			
 			</div>
 	
-		Listado de las entradas<br/>
+			<h1>Listado de las entradas</h1>
 		
 		<?php
 				#lanzo la conexion de MYSQL server
@@ -184,3 +185,6 @@
 		
 	</body>
 </html>
+<?php
+ob_end_flush();
+?>

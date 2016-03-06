@@ -11,8 +11,8 @@
 				echo $usuarioLogin;
 				echo $password;
 			
-				#incluyo mi fichero de conexion
-				include("mysql.inc.php");
+				
+				include_once ("funciones.inc.php"); // funciones y conexion con la DB
 				
 				#lanzo la conexion de MYSQL server
 				conecta($c);

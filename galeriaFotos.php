@@ -18,8 +18,7 @@
 		
 		<!-- Archivos externos -->
 		<?php
-			include_once ("mysql.inc.php"); // datos conexion DB
-			include_once ("funciones.inc.php"); 
+			include_once ("funciones.inc.php"); // funciones y conexion con la DB
 		?>
 		
 		<div id="contenedor">
