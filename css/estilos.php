@@ -1,32 +1,29 @@
 <?php
     header("Content-type: text/css; charset: UTF-8");
-
-      include ("./consulta.inc.php");
-
     
-    var_dump ($config);
+    include_once ('../funciones.inc.php');
+     
+    $consulta="select * from configuracionweb where id=1";
+
+    $tablaConfigValor = consultaConfiguracionDB ($consulta);
+
 ?>
-
-
-
-
-
-
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,900italic,900,700,400italic,500italic);
 
 html {
-  font-size: 16px;
+  font-size: <?=$tablaConfigValor["tamanoLetra"]?>;
+  background-color: <?=$tablaConfigValor["colorFondoWeb"]?>;
 }
 body {
-    font-family: Roboto,Helvetica, Arial, sans-serif;
+    font-family:<?=$tablaConfigValor["tipoLetra"]?>;
     
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: Roboto,Helvetica, Arial, sans-serif;
+    font-family: <?=$tablaConfigValor["tipoLetra"]?>;
 }
 h1{
-	font-size: 2.1rem;	
+	font-size:<?=$tablaConfigValor["tamanoTitulos"]?>;	
 }
 h5{
 	font-size: 0.8rem;
@@ -34,7 +31,7 @@ h5{
 
 #contenedor{
   
-  width:968px;
+  width:<?=$tablaConfigValor["anchoWeb"]?>;
   margin: 0 auto;
   
   
@@ -68,8 +65,8 @@ h5{
 #barraMenu a{
   margin: 19px 23px;
     text-decoration: none;
-    color:black;
-    font-size:1.3rem;
+    color:#000000;
+    font-size:<?=$tablaConfigValor["tamanoMenuPrincipal"]?>;
  
 }
 
@@ -82,7 +79,13 @@ h5{
 }
 
 
-
+#idLogotipoImg {
+   
+  background: url('<?=$tablaConfigValor["rutaLogo"]?>');
+  background-repeat: no-repeat;
+  width:403px;
+  height:161px;
+}
 
 
 
@@ -97,7 +100,7 @@ h5{
      clear: both;
     margin: 19px 23px;
     text-decoration: none;
-    color:black;
+    color:#000000;
     font-size:1.3rem;
 }
 
@@ -128,7 +131,10 @@ h5{
   font-weight: bold;
 }
 
+#licenciaIDQ{
+	text-align: center;
 
+}
 
 
 
@@ -159,7 +165,7 @@ h5{
 	position: absolute;
 	top: 0%;
 	left: 0%;
-	background-color: black;
+	background-color:#000000;
 	z-index:1001;
 	-moz-opacity: 0.8;
 	opacity:.80;
@@ -190,11 +196,7 @@ h5{
   margin:0
 }
 
-.miniaturas-fotos{
-  display:inline 
-  
-  
-}
+
 .miGaleria {
    display: -webkit-flex;
    display: flex;
@@ -212,15 +214,6 @@ h5{
 
 
 /******** END Efectos Galeria fotos ******/
-
-
-
-
-
-
-
-
-
 
 
 
@@ -260,7 +253,7 @@ h5{
 }
 .copeteNormal{
   font-style: italic;
-  font-size: 1.35rem;
+  font-size: <?=$tablaConfigValor["tamanoCopete"]?>;
 }
 .cuerpoNormal{
   margin-top:0.25%;
@@ -297,7 +290,7 @@ h5{
 
 
 
-/* cabecera LOGIN*/
+/* cabecera LOGIN */
 
 
 #logotipo{
@@ -354,15 +347,6 @@ h5{
 
 /* final cabecera LOGIN*/
 
-
-
-
-
-
-
-
-
-
 .btn-eliminar {
 	
 	background-image: url(".././images/delete-button.png");
@@ -372,13 +356,6 @@ h5{
 	width:24px;
 	height:24px;
 }
-
-/*  */
-
-
-
-
-
 
 
 .fotoPost {
@@ -392,9 +369,9 @@ h5{
 
 /********************* DESDE AQUI CSS SLIDE ********************/
 
- #slides {
-      display: none
-     
+#slides {
+      display: none;
+     margin-top:10px;	
     }
 
     #slides .slidesjs-navigation {
@@ -500,17 +477,13 @@ h5{
 
 
 
-
-
-
-
 /********************* SLIDE RESPONSIVE ********************/
 
 #slides {
       display: none
     }
 
-    .container {
+.container {
       margin: 0 auto
     }
 
@@ -535,15 +508,18 @@ h5{
     /* For smaller displays like laptops */
     @media (min-width: 768px) and (max-width: 979px) {
       .container {
-        width: 724px
+        width: 724px;
+		margin-top: 5px;	
       }
     }
 
     /* For larger displays */
     @media (min-width: 1200px) {
       .container {
-        width: 1170px
+        width: 1170px;
+		margin-top: 10px;	
       }
     }
-  
+ 
 /********************* FIN SLIDE RESPONSIVE ********************/
+

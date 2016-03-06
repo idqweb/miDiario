@@ -91,4 +91,49 @@ $(document).ready(function() {
 /****** fin textAREAS *********/
 
 
+/****** Color picker *********/
+$(document).ready(function() {
+		
+	$('#colorFondoWeb,#colorTitulosWeb,#colorLetraMenu').ColorPicker({
+		onSubmit: function(hsb, hex, rgb, el) {
+			$(el).val(hex);
+			$(el).ColorPickerHide();
+		},
+		onBeforeShow: function () {
+			$(this).ColorPickerSetColor(this.value);
+		}
+	})
+	.bind('keyup', function(){
+		$(this).ColorPickerSetColor(this.value);
+	});
+});
+/****** Fin Color picker *********/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

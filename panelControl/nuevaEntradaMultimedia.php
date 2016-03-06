@@ -8,7 +8,7 @@
 		<meta name="keywords" content="diario,blog personal,pensamientos">
 		<meta name="author" content="Isaac Díez">
 	<!-- CSS PERSONALIZADOS -->
-		<link rel="stylesheet" href="../css/estilos.css"/>
+		<link rel="stylesheet" href="../css/estilos.php"/>
 	<!-- JS NECESARIOS -->	
 		<script src="../js/jquery-2.1.4.min.js"></script>
 		<script src="../js/configPost1.js"></script>
@@ -26,7 +26,7 @@
 		?>
 	<div id="contenedor">
 		<header>
-			<div id="logotipo"><a href="../index.php"><img src="../images/logotipo_web.png" alt="logotipo Mi Diario"/></a></div>
+			<div id="logotipo"><a href="../index.php"><div id="idLogotipoImg"></div></a></div>
 			<?php
 				// menu login
 
@@ -87,7 +87,7 @@
 			if (isset ($_POST['b-submit'])){
 				
 				
-						// preguntar a sergio chmod_R( '.././uploads/', 0777, 0777); 
+						 
 				
 				
 
@@ -124,7 +124,7 @@
 							
 						}
 						else{
-							echo ("El archivo ha FALLADO".$error);
+							echo ("El archivo ha FALLADO");
 							$ficheroBienSubido = false;
 						}
 			}
@@ -224,7 +224,7 @@
 		
 		<footer>
 			<hr/>
-			<div class="licenciaIDQ">
+			<div id="licenciaIDQ">
 			<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
 				</a><br />Mi Diario por <a href="http://idqweb.com/" target="_blank">IDQ</a> se distribuye bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Licencia Creative Commons Atribución 4.0 Internacional</a>
 			</div>

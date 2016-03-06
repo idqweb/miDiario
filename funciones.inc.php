@@ -2,7 +2,7 @@
 
 $mysql_server="localhost";		
 $mysql_login="root";			  
-$mysql_pass="admin";			  
+$mysql_pass="admin";
 $c;
 
 function conecta(&$c){
@@ -19,13 +19,39 @@ function conecta(&$c){
 }
 
 
-function actualizaDB ($tamanoLetra,$tipoLetra){
+function consultaConfiguracionDB ($consulta){
 			conecta($c);
 			
+                            
 			$nombredb="proyectofinal";
 	
 			mysqli_select_db($c,$nombredb);
-        	$sql="UPDATE configuracionweb SET id=1,tamanoLetra='$tamanoLetra',tipoLetra='$tipoLetra' WHERE id=1";
+    
+            $sql="select * from configuracionweb where id=1";
+					
+			$resultado=mysqli_query($c,$sql);
+               
+            $registros = mysqli_fetch_array($resultado); 
+    
+           
+	 		mysqli_close($c); //cierro la conexion con la db
+    
+    return $registros;            
+}
+
+
+
+
+
+
+
+
+function actualizaDB ($sqlCompuesto){
+			conecta($c);
+			echo  $sqlCompuesto;
+			$nombredb="proyectofinal";
+			mysqli_select_db($c,$nombredb);
+        	$sql=$sqlCompuesto;
             $resultado=mysqli_query($c,$sql);
 	 		mysqli_close($c); //cierro la conexion con la db
 }
