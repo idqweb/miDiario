@@ -91,6 +91,8 @@
 							#el fetch pasa la informacion a $registro y
 							#avanza el puntero a la siguiente fila y cuando termine finaliza el while
 							
+							
+							
 							while($registro = mysqli_fetch_array($resultado)){
 								
 								$directorioMiniaturas ="./uploads/fotos/thumbnails/";

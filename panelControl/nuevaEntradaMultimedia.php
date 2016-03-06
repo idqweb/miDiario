@@ -9,6 +9,7 @@
 		<meta name="author" content="Isaac Díez">
 	<!-- CSS PERSONALIZADOS -->
 		<link rel="stylesheet" href="../css/estilos.php"/>
+		<link rel="stylesheet" href="../css/botones.css"/>
 	<!-- JS NECESARIOS -->	
 		<script src="../js/jquery-2.1.4.min.js"></script>
 		<script src="../js/configPost1.js"></script>
@@ -58,7 +59,7 @@
 			
 			<fieldset>
 				<legend>Insertar Entrada Multimedia</legend>
-			<label>Titular:</label><input type="text" id="titulo" name="titulo" required autofocus /><br/>
+			<label>Titular:</label><input type="text" id="titulo" name="titulo"  size="80" maxlength="80" required autofocus /><br/>
 			<label>Tema:</label>
 						<select name="tema" id="tema">
 						  <option value="Reflexiones">Reflexiones</option>
@@ -69,9 +70,10 @@
 			<input type="hidden" id="fecha" name="fecha" value="<?=date('Y-m-d H:i:s')?>" />
 			<label>Autor:</label><input type="text" id="autor" name="autor" /><br/>
 			<span class="avisoFormulario">* Opcional: Si no pones nada será "admin".</span>
-			<label>Archivo:</label><input id="inputImage" name="archivo" type="file" accept="image/*"/><br/>
-			<button type="reset" class="">Borrar Datos</button>
-			<button type="submit" name="b-submit" class="">Añadir Entrada</button>
+			<label>Archivo:</label><input id="inputImage" name="archivo" type="file" accept="image/*"/><br/><br/>
+			<button type="submit" name="b-submit" class="large button blue">Añadir Entrada</button>	
+			<button type="reset" class="large button red">Borrar Datos</button>
+			
 			
 			
 			</fieldset>
@@ -86,17 +88,7 @@
 				
 			if (isset ($_POST['b-submit'])){
 				
-				
-						 
-				
-				
-
 						$dir_subida="../uploads/fotos/";
-				
-						
-							
-				
-						
 						
 						$fichero_subido = $dir_subida.basename($_FILES['archivo']['name']); 
 										
@@ -124,7 +116,11 @@
 							
 						}
 						else{
-							echo ("El archivo ha FALLADO");
+									echo "<div class='entradaFail'>";
+									echo "No has subido una IMAGEN valida. Puedes:<br/>";
+									echo "<a href='./nuevaEntradaMultimedia.php' class='large button red'>Insertar nuevamente el Post</a>";
+									echo "<a href='./panel.php' class='large button blue'>Volver al Panel de Control</a>";
+									echo "</div>";
 							$ficheroBienSubido = false;
 						}
 			}
@@ -183,13 +179,26 @@
 								
 								
 								
-							echo $sql;
+							
 							$postnew=mysqli_query($c,$sql);
 							
-								if ($postnew)
-									echo "TODO OK";
-								else
-									echo "fallo en el INSERT";
+								if ($postnew){
+									
+									echo "<div class='entradaOk'>";
+									echo "Entrada Correctamente Insertada.  Ahora puedes:<br/>";
+									echo "<a href='./nuevaEntradaMultimedia.php' class='large button red'>Insertar un Nuevo Post</a>";
+									echo "<a href='./panel.php' class='large button blue'>Volver al Panel de Control</a>";
+									echo "</div>";
+								}
+								else{
+									
+									echo "<div class='entradaFail'>";
+									echo "Lo sentimos.Hubo un error al insertar la entrada. Ahora puedes: ";
+									echo "<a href='./nuevaEntradaMultimedia.php' class='large button red'>Insertar otra vez el Post</a>";
+									echo "<a href='./panel.php' class='large button blue'>Volver al Panel de Control</a>";
+									echo "</div>";
+									
+								}
 
 						}
 
@@ -201,7 +210,7 @@
 						
 						
 					}else{
-						echo "el titulo en blanco o archivo mal subido";
+						
 					}
 			}
 

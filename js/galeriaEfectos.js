@@ -8,8 +8,8 @@ $(document).ready(function() {
 			 	var imagen = $('.escala');
 				var ancho = imagen.width();
 				var alto = imagen.height();
-			 	alto=alto*1.3; 	
-			 	ancho=ancho*1.3; 
+			 	alto=alto+5; 	
+			 	ancho=ancho+5; 
 				$(this).css({ 'width':ancho+"px", 'height':alto+"px" });
 			});
 	

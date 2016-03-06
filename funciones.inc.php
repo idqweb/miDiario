@@ -48,7 +48,7 @@ function consultaConfiguracionDB ($consulta){
 
 function actualizaDB ($sqlCompuesto){
 			conecta($c);
-			echo  $sqlCompuesto;
+			
 			$nombredb="proyectofinal";
 			mysqli_select_db($c,$nombredb);
         	$sql=$sqlCompuesto;

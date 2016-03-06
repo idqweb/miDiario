@@ -9,6 +9,7 @@
 		<meta name="author" content="Isaac Díez">
 	<!-- CSS PERSONALIZADOS -->
 		<link rel="stylesheet" href="../css/estilos.php"/>
+		<link rel="stylesheet" href="../css/botones.css"/>
 		<link rel="stylesheet" href="../css/estiloTablas.css"/>
 		<link rel="stylesheet" media="screen" type="text/css" href="../css/colorpicker.css" />
 
@@ -194,10 +195,11 @@
 			<fieldset>
 				<legend>Valores Iniciales</legend>
 				<h3>Volver a los valores por defecto de la web "miDiario"</h3>
-					<button type="submit" id="btn-restart"  name="btn-restart" class="btnPanel" >Valores Predeterminados</button>
+					<button type="submit" id="btn-restart"  name="btn-restart" class="large button blue" >Valores Predeterminados</button>
 			</fieldset>
 		</form>	
-		
+		<br/>
+		<br/>		
 		<form method="post" action="configWeb.php"  enctype="multipart/form-data">
 			<fieldset>
 			<legend>Personaliza miDiario</legend>
@@ -275,11 +277,11 @@
 				<div class="lineaFinPost"><hr/></div>
 				<h4>Cambia Logotipo</h4>
 				<p>Se admiten archivos de imagen (jpg,gif,png etc..)</p>
-				<label>Archivo:</label><input id="inputImage" name="archivo" type="file" accept="image/*"/><br/>
+				<label>Archivo:</label><input id="inputImage" name="archivo" type="file" accept="image/*"/><br/><br/>
 				<div class="lineaSuperiorPost"><hr/></div>	
 			
-			<button type="submit" name="btn-cambios" id="btn-cambios">Guarda Cambios</button>
-			
+			<button type="submit" name="btn-cambios" class="large button blue" id="btn-cambios">Guarda Cambios</button>
+			<button type="reset" class="large button red">Borrar Datos</button>
 			</fieldset>
 		</form>
 		

@@ -9,6 +9,7 @@
 		<meta name="author" content="Isaac Díez">
 	<!-- CSS PERSONALIZADOS -->
 		<link rel="stylesheet" href="../css/estilos.php"/>
+		<link rel="stylesheet" href="../css/botones.css"/>
 	<!-- JS NECESARIOS -->	
 		<script src="../js/jquery-2.1.4.min.js"></script>
 		<script src="../js/configPost1.js"></script>
@@ -75,7 +76,10 @@
                			 	CKEDITOR.replace( 'editor1' );
 							CKEDITOR.instances.editor1.setData('Aqui tu texto...');
            		</script>
-			<button name="bnt-post" id="btn-post">Insertar Entrada</button>
+			<br/>
+			<button name="bnt-post" class="large button blue" id="btn-post">Insertar Entrada</button>	
+				<button type="reset" class="large button red">Borrar Datos</button>
+			
 			
 			</fieldset>
 		</form>
@@ -124,13 +128,27 @@
 								
 								
 								
-							echo $sql;
+							
 							$postnew=mysqli_query($c,$sql);
 							
-								if ($postnew)
-									echo "TODO OK";
-								else
-									echo "fallo en el INSERT";
+								if ($postnew){
+									
+									echo "<div class='entradaOk'>";
+									echo "Entrada Correctamente Insertada.  Ahora puedes:<br/>";
+									echo "<a href='./nuevaEntrada.php' class='large button red'>Insertar un Nuevo Post Multimedia</a>";
+									echo "<a href='./panel.php' class='large button blue'>Volver al Panel de Control</a>";
+									echo "</div>";
+								}
+								else{
+									
+									echo "<div class='entradaFail'>";
+									echo "Lo sentimos.Hubo un error al insertar la entrada. Ahora puedes: ";
+									echo "<a href='./nuevaEntrada.php' class='large button red'>Insertar otra vez el Post</a>";
+									echo "<a href='./panel.php' class='large button blue'>Volver al Panel de Control</a>";
+									echo "</div>";
+									
+								}
+									
 
 						}
 

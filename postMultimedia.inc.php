@@ -18,7 +18,9 @@
 	</div>
 	<div class="lineaSuperiorPost"><hr/></div>	
 	<div class="titularNormal"><h1><?=$registro['titular']?></h1></div>
-	<div class="miniaturaPortada"><img src="./<?=$directorioSlides.$archivo?>" alt="<?=$archivo?>" width="450" height="337"/></div>
+	<a href="./<?=$directorioFotos.$archivo?>" target="_blank">
+		<div class="miniaturaPortada"><img src="./<?=$directorioSlides.$archivo?>" alt="<?=$archivo?>" width="450" height="337"/></div>
+	</a>	
 	<div class="categoria">Categoria<img src="./images/icon-hash-tag-16.png" alt="hash-tag" /><?=$registro['tema']?></div>
 	<div class="lineaFinPost"><hr/></div>	
 </div>

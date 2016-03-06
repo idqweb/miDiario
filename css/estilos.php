@@ -131,6 +131,32 @@ h5{
   font-weight: bold;
 }
 
+
+.entradaOk{
+	margin-top:10px;
+	text-align: center;
+
+}
+.entradaOk a{
+	margin-right:10px;
+	text-align: center;
+
+}
+
+.entradaFail{
+	margin-top:10px;
+	text-align: center;
+
+}
+.entradaFail a{
+	margin-right:10px;
+	text-align: center;
+
+}
+
+
+
+
 #licenciaIDQ{
 	text-align: center;
 
